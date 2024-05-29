@@ -1,0 +1,58 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017/
+mongodb://localhost:27017/
+Current Mongosh Log ID: 6657b635902cfc332fcdcdf5
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6
+Using MongoDB:          7.0.9
+Using Mongosh:          2.2.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2024-05-29T18:00:16.091-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use Pedro_proyecto
+switched to db Pedro_proyecto
+Pedro_proyecto> db.Pedro_proyecto.insert(
+...
+Pedro_proyecto> db.Pedro_proyecto.insert( { Nombre:'Pedro Coronel', Edad:'36', Universidad:'Universitaria de Colombia'})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6657b791902cfc332fcdcdf6') }
+}
+Pedro_proyecto> db.Pedro_proyecto.find()
+[
+  {
+    _id: ObjectId('6657b791902cfc332fcdcdf6'),
+    Nombre: 'Pedro Coronel',
+    Edad: '36',
+    Universidad: 'Universitaria de Colombia'
+  }
+]
+Pedro_proyecto> db.Pedro_proyecto.insert({ Nombre: 'Javier Hernandez', Edad: '34', Universidad: 'Universitaria de Colombia' })
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6657b7e5902cfc332fcdcdf7') }
+}
+Pedro_proyecto> db.Pedro_proyecto.find()
+[
+  {
+    _id: ObjectId('6657b791902cfc332fcdcdf6'),
+    Nombre: 'Pedro Coronel',
+    Edad: '36',
+    Universidad: 'Universitaria de Colombia'
+  },
+  {
+    _id: ObjectId('6657b7e5902cfc332fcdcdf7'),
+    Nombre: 'Javier Hernandez',
+    Edad: '34',
+    Universidad: 'Universitaria de Colombia'
+  }
+]
+Pedro_proyecto>
